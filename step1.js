@@ -9,17 +9,18 @@ const fsP = require('fs/promises');
  * - on Error: returns error message and exits process
 */
 async function cat(path) {
+  let content;
+
   try {
-    const content = await fsP.readFile(path, "utf8");
-    console.log(content);
+    content = await fsP.readFile(path, "utf8");
   }
   catch (error) {
     console.error(`
-      Error reading ${path}: ${error}`);
+    Error reading ${path}: ${error}`);
     process.exit(1);
   }
+
+  console.log(content);
 }
 
 cat(process.argv[2])
-
-
