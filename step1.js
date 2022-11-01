@@ -1,6 +1,5 @@
 "use strict";
 
-const { CallTracker } = require('assert');
 const fsP = require('fs/promises');
 
 /** cat: read file with path and print contents of file */
