@@ -40,8 +40,9 @@ async function webCat(url) {
     console.log(response.data);
   }
   catch (error) {
+    // console.error(error)
     console.error(`Error fetching ${url}:
-    Error: Request failed with status code 404`);
+    Error: ${error}`);
   }
 }
 
@@ -61,4 +62,3 @@ function main(path) {
 
 const path = process.argv[2];
 main(path);
-
